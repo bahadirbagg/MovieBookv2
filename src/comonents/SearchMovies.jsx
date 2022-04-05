@@ -6,23 +6,37 @@ function SearchMovies(query){
 
     const [movie,getMovie] = useState([]);
     const [page,setPage] =useState(1);  
+    const [counter,setCounter] = useState(1);
+
 
     const fetchSearch = async() => {
  
-        console.log("query içerde",query)
         const response = await axios.get(`https://api.themoviedb.org/3/search/movie?api_key=4eb490f3e0e767726c90fddf79671fa1&language=en-US&query=${query.match.params.search}&page=${page}&include_adult=false`)
-        console.log("search",response.data)
         getMovie(movies => [...movies, ...response.data.results])
+        setCounter(1)
+      }
+      const fetchSearch2 = async() => {
+ 
+        const response = await axios.get(`https://api.themoviedb.org/3/search/movie?api_key=4eb490f3e0e767726c90fddf79671fa1&language=en-US&query=${query.match.params.search}&page=${page}&include_adult=false`)
+        getMovie(response.data.results)
+        setPage(1)
       }
       
 
 
       useEffect(() => {
-        fetchSearch()
-      },[page,query])
+        if(counter>1){
+          fetchSearch()
+        }
+        else{
+          fetchSearch2()
+        }
+      },[query,page])
+
 
       const loadMore = async () => {
         setPage(page+1)
+        setCounter(counter+1)
       } 
 
     return(
@@ -30,7 +44,7 @@ function SearchMovies(query){
       <div className="container mx-auto px-4 pt-16 pb-16">
         <div className="popular-movies">
           <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-5 ">
-            {movie.map((movie,i) => 
+            {movie?.map((movie,i) => 
               <MovieCard movies={movie} key={i}/>
             )}
           </div>

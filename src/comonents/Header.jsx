@@ -1,14 +1,18 @@
 import React,{useState} from "react";
-import {Link, Redirect} from "react-router-dom"
+import {Link , useHistory} from "react-router-dom"
 import { FaSearch } from 'react-icons/fa';
 
 function Header(){
 
 const [query,setQuery] = useState('');
+const history = useHistory();
 
 const searchText = (event) => {
     console.log("gueryy=",query);
     setQuery(event.target.value);
+    if (event.charCode === 13) {
+        history.push(`/search/${query}`);
+      }
 }
 
 
@@ -37,9 +41,9 @@ const searchText = (event) => {
                 </ul>
                 <div className="flex flex-col md:flex-row md:ml-7 items-center">
 
-                    <input type="text" value={query} onChange={searchText.bind(this)} className="w-48 text-xs rounded-full md:text-base md:w-64 px-4 py-1 border-2 border-gray-600 bg-gray-800" placeholder="Search" />
+                    <input type="text" value={query} onChange={searchText.bind(this)} onKeyPress={searchText.bind(this)} className="w-48 text-xs rounded-full md:text-base md:w-64 px-4 py-1 border-2 border-gray-600 bg-gray-800" placeholder="Search" />
                     <Link to= {`/search/${query}`}>
-                        <FaSearch className="flex mt-2 md:mt-0 md:ml-4"></FaSearch>
+                        <FaSearch className="flex mt-2 md:mt-0 md:ml-4"/>
                     </Link>
                 </div>
             </div>
