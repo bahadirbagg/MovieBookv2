@@ -1,13 +1,15 @@
-import React,{useEffect, useState} from "react";
+import React,{useEffect, useState, useRef} from "react";
 import axios from "axios";
 import MovieSlide from "./MovieSlide";
 import {  FaArrowRight } from 'react-icons/fa';
+import { useDraggable } from "react-use-draggable-scroll";
 
 function Movie({title ,url}){
 
 const [movies,getMovie] = useState([]);
 const [page,setPage] =useState(1);  
-
+const ref = useRef();             
+const { events } = useDraggable(ref); 
 
 
  const fetchPopularMovies = async() => {
@@ -31,7 +33,7 @@ useEffect(() => {
     return(
         <div className="relative flex flex-col space-y-2 my-10 px-8 max-w-[1400] mx-auto" >
           <h2 className="font-semibold md:text-xl text-orange-600" >{title}</h2>
-          <div className="flex space-x-6 overflow-y-hidden overflow-x-scroll scrollbar-hide p-2 -ml-2">
+          <div className="flex space-x-6 overflow-y-hidden overflow-x-scroll scrollbar-hide p-2 -ml-2" {...events} ref={ref}>
                 {movies.map((movie,i) => 
                     <MovieSlide movie={movie} key={i}/>
                 )}

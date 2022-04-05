@@ -2,11 +2,13 @@ import MovieCard from "./MovieCard";
 import React,{useEffect, useState} from "react";
 import axios from "axios";
 
+
 function SearchMovies(query){
 
     const [movie,getMovie] = useState([]);
     const [page,setPage] =useState(1);  
     const [counter,setCounter] = useState(1);
+
 
 
     const fetchSearch = async() => {
