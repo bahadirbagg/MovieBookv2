@@ -24,7 +24,7 @@ const searchText = (event) => {
                             </p>
                         </Link>    
                     </li>
-                    <li className="mt-3 text-xs mb-3 md:text-base md:ml-28 md:mt-0 md:mb-0 md:flex-col   text-white  rounded-md ">
+                    <li className="mt-3 text-xs md:text-base md:ml-28 md:mt-0 md:mb-0 md:flex-col   text-white  rounded-md ">
                         <Link to="/UpcomingMovies">
                             <p className="opacity-50 hover:opacity-100 hover:shadow-2xl">Upcoming Movies</p>
                         </Link>
@@ -39,7 +39,7 @@ const searchText = (event) => {
 
                     <input type="text" value={query} onChange={searchText.bind(this)} className="w-48 text-xs rounded-full md:text-base md:w-64 px-4 py-1 border-2 border-gray-600 bg-gray-800" placeholder="Search" />
                     <Link to= {`/search/${query}`}>
-                        <FaSearch className=" flex"/>
+                        <FaSearch className="flex mt-2 md:ml-4">search</FaSearch>
                     </Link>
                 </div>
             </div>

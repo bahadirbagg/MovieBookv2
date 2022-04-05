@@ -1,7 +1,7 @@
 import React,{useEffect, useState} from "react";
 import axios from "axios";
 import MovieSlide from "./MovieSlide";
-import MovieCard from "./MovieCard";
+import {  FaArrowRight } from 'react-icons/fa';
 
 function Movie({title ,url}){
 
@@ -35,8 +35,8 @@ useEffect(() => {
                 {movies.map((movie,i) => 
                     <MovieSlide movie={movie} key={i}/>
                 )}
-                <div className=" absolute right-0 mr-5 mt-[90px] text-orange-600 cursor-pointer" onClick={loadMore}>--></div>  
           </div>
+          <FaArrowRight fontSize={30} className="absolute right-0 mr-8 md:mr-5 mb-5 cursor-pointer text-orange-600" onClick={loadMore} />
         </div>
       
     )

@@ -1,7 +1,6 @@
 const API_KEY = "4eb490f3e0e767726c90fddf79671fa1";
 export const BACKDROP_PATH = 'https://image.tmdb.org/t/p/original';
 export const IMAGE_PATH = 'https://image.tmdb.org/t/p/w500';
-const page = 1;
 var date = new Date();
 
 	var d = date.getDate();

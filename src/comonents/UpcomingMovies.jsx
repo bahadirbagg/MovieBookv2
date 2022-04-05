@@ -28,14 +28,14 @@ const loadMore = async () => {
     return(
       <div className="container mx-auto px-4 pt-16 pb-16">
         <div className="popular-movies">
-          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
+          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-5">
             {movies.map((movie,i) =>  (
-              movies.poster_path ===null || movies.backdrop_path ===null ?  
+              movies.poster_path === null || movies.backdrop_path === null ?  
                 null : (<MovieCard2 movies={movie} key={i}/>)
               
             ))}
           </div>
-          <div className=" absolute mt-4 justify-center text-orange-600 cursor-pointer rounded-xl p-1   border-x-2 border-orange-600" onClick={loadMore}>View More</div>
+          <div className=" absolute mt-4 justify-center text-orange-600 cursor-pointer rounded-xl p-1 border-x-2 border-orange-600 hover:bg-orange-500 hover:text-black" onClick={loadMore}>View More</div>
         </div>
       </div>
     )
