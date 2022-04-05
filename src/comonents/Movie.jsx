@@ -38,7 +38,7 @@ useEffect(() => {
                     <MovieSlide movie={movie} key={i}/>
                 )}
           </div>
-          <FaArrowRight fontSize={30} className="absolute right-0 mr-8 md:mr-5 mb-5 cursor-pointer text-orange-600" onClick={loadMore} />
+          <p className="absolute right-0 mr-8 md:mr-5 mb-5 cursor-pointer text-orange-600" onClick={loadMore} >Add More...</p>
         </div>
       
     )
