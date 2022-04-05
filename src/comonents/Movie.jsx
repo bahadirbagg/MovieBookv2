@@ -14,7 +14,6 @@ const { events } = useDraggable(ref);
 
  const fetchPopularMovies = async() => {
    const response = await axios.get(url+`&page=${page}`)
-   console.log(url)
    getMovie(movies => [...movies, ...response.data.results])
    return response;
 

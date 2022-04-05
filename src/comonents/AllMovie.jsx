@@ -9,7 +9,6 @@ function AllMovie(){
 const [movies,getMovie] = useState([]);
 const [page,setPage] =useState(1);  
 
-console.log("page sayısı",page)
 
 const fetchUpcomingMovies = async() => {
   const response = await axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=4eb490f3e0e767726c90fddf79671fa1&language=en-US&page=${page}`)
@@ -18,7 +17,6 @@ const fetchUpcomingMovies = async() => {
 
 
 useEffect(() => {
-  console.log("use effect page sayısı",page)
       fetchUpcomingMovies()
 
 },[page])

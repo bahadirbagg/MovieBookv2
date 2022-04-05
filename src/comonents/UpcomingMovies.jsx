@@ -12,10 +12,8 @@ const [page,setPage] =useState(1);
 
  const fetchUpcomingMovies = async() => {
   const response = await axios.get(api.getUpcomingMovies+`&page=${page}`)
-   console.log(response.data.results)
   getMovie(movies => [...movies, ...response.data.results])
 }
-console.log(api.getUpcomingMovies+`&page${page}`)
 
 useEffect(() => {
     fetchUpcomingMovies()
