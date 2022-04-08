@@ -13,7 +13,7 @@ function MovieCard({movies}){
                 <div className="p-1 text-sm bg-orange-400 font-bold rounded-xl md:p-2 md:text-base text-gray-700">{movies.vote_average}</div>
 	        </div>
             <div className="mt-2">
-                <p className="  text-2xl mt-2 text-white hover:text-gray:300">{movies.title}</p>
+                <p className=" text-sm md:text-2xl mt-2 text-white hover:text-gray:300">{movies.title}</p>
             </div>
         </div>
 
