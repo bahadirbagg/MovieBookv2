@@ -30,14 +30,14 @@ useEffect(() => {
 
     
     return(
-        <div className="relative flex flex-col space-y-2 my-10 px-8 max-w-[1400] mx-auto" >
+        <div className="   flex flex-col space-y-2 my-3 px-3 md:my-10 md:px-8 max-w-[1400] mx-auto" >
           <h2 className="font-semibold md:text-xl text-orange-600" >{title}</h2>
           <div className="flex space-x-6 overflow-y-hidden overflow-x-scroll scrollbar-hide p-2 -ml-2" {...events} ref={ref}>
                 {movies.map((movie,i) => 
                     <MovieSlide movie={movie} key={i}/>
                 )}
           </div>
-          <p className="absolute right-0 mr-8 md:mr-5 mb-5 cursor-pointer text-orange-600" onClick={loadMore} >Load More...</p>
+          <p className="absolute right-0 text-xs md:text-base mr-8 md:mr-5 mb-5 cursor-pointer text-orange-600" onClick={loadMore} >Load More...</p>
         </div>
       
     )
