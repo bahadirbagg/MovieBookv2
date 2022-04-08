@@ -102,7 +102,7 @@ const opts = {
                             <img src={IMAGE_PATH + movies.poster_path} alt={movies.original_title} width={300}/>
                                 <FaPlayCircle color="white" fontSize={50} onClick={() => setActive(true)} className="absolute cursor-pointer" />
                         </div>
-                        <div className="mt-5 md:flex md:justify-center md:items-center lg:mt-0 lg:ml-10" >
+                        <div className="mt-5 mb-5 md:flex md:justify-center md:items-center lg:mb-0 lg:mt-0 lg:ml-10" >
                             {active === true && renderTrailer()}
                         </div>
                         <div className="sm:mt-10 lg:w-[400px] inline-flex flex-col  lg:top-0 lg:mt-0 lg:ml-10  justify-center">

@@ -27,12 +27,12 @@ const searchText = (event) => {
                             </p>
                         </Link>    
                     </li>
-                    <li className="mt-3 text-xs md:text-base md:ml-28 md:mt-0 md:mb-0 md:flex-col   text-white  rounded-md ">
+                    <li className="mt-2 text-xs md:text-base md:ml-28 md:mt-0 md:mb-0 md:flex-col   text-white  rounded-md ">
                         <Link to="/UpcomingMovies">
                             <p className="opacity-50 hover:opacity-100 hover:shadow-2xl">Upcoming Movies</p>
                         </Link>
                     </li>
-                    <li className="mt-3 text-xs mb-3 md:text-base md:ml-28 md:mt-0 md:mb-0 md:flex-col   text-white  rounded-md ">
+                    <li className="mt-1 text-xs mb-1 md:text-base md:ml-28 md:mt-0 md:mb-0 md:flex-col   text-white  rounded-md ">
                         <Link to="/AllMovies">
                             <p className="opacity-50 hover:opacity-100 hover:shadow-2xl">Movies</p>
                         </Link>
