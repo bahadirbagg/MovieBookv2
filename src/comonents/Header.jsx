@@ -23,7 +23,7 @@ const searchText = (event) => {
                     <li>
                         <Link to="/">
                             <p className="text-2xl md:text-3xl lg:text-4xl font-bold">Movie
-                                <span className="text-red-600">Book</span>
+                                <span className="text-orange-500">Book</span>
                             </p>
                         </Link>    
                     </li>

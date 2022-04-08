@@ -9,11 +9,11 @@ function Home() {
       <div>
         <Slider/>
         <Movie title='Trending' url={api.getTrending}/>
-        <Movie title='TopRated' url={api.getTopRated}/>
-        <Movie title='ActionMovies' url={api.getActionMovies}/>
-        <Movie title='HorrorMovies' url={api.getHorrorMovies}/>
-        <Movie title='ComedyMovies' url={api.getComedyMovies}/>
-        <Movie title='RomanceMovies' url={api.getRomanceMovies}/>
+        <Movie title='Top Rated' url={api.getTopRated}/>
+        <Movie title='Action Movies' url={api.getActionMovies}/>
+        <Movie title='Horror Movies' url={api.getHorrorMovies}/>
+        <Movie title='Comedy Movies' url={api.getComedyMovies}/>
+        <Movie title='Romance Movies' url={api.getRomanceMovies}/>
       </div>
        
   ) 
